@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign In</title>
+        <link rel="stylesheet" href={% static 'css/styles.css' %}>
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href={% static 'css/styles.css' %} >
+    </head>
+    <body>
+
+      <div class="container">
+        <form action="/" method="post">
+          {% csrf_token %}
+      
+            <h1>Sign In</h1>
+            
+            <fieldset>
+              <label for="mail">Email:</label>
+              <input type="email" id="mail" name="user_email" style="margin-bottom: 30px;" required>
+              
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="user_password" required>
+            </fieldset>
+            
+            <button type="submit">Sign In</button>
+            {% if status %}
+            <p class="error">{{ status }}</p>
+            {% endif %}
+          </form>
+      </div>
+      
+    </body>
+</html>
+</html>
